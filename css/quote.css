@@ -1,0 +1,253 @@
+body,
+html, 
+ul {
+  margin: 0;
+  padding: 0;
+  background: #f2f2f2 url(../pictures/background.png) repeat;
+  font: 16px Arno Pro;
+}
+
+@media only screen and (max-device-width:1024px) and (orientation:landscape) {
+  .swipe-wrap>div {
+    min-height: 660px;
+	}
+
+	#button1, 
+	#button2 {
+    display: none!important;
+	}
+}
+
+@media only screen and (max-device-width:1024px) and (orientation:portrait) {
+  .description {
+    max-width: 520px!important;
+	}
+
+	.swipe-wrap>div {
+    min-height: 768px;
+	}
+	
+	#button1, 
+	#button2 {
+    display: none!important;
+	}
+}
+
+@media only screen and (max-device-width:480px) and (orientation:portrait) {
+  .swipe-wrap>div {
+    min-height: 494px!important;
+	}
+}
+
+@media only screen and (max-device-width:480px) and (orientation:landscape) {
+ 	.swipe-wrap>div {
+    min-height: 406px!important;
+	}
+}
+
+@media only screen and (max-device-width:480px) {
+  html {
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+	}
+	
+	.header {
+    width: 196px!important;
+    height: 79px!important;
+	}
+	
+	#quote {
+    font-size: 1.5em!important;
+    margin-top: 10px!important;
+	}
+	
+	#year,
+	span {
+    font-size: 1.25em!important;
+	}
+
+	.description {
+    font-size: 1.25em!important;
+    max-width: 460px!important;
+    margin-top: 15px!important;
+	}
+	
+	.bullet1 {
+    display: none;
+	}
+	
+	#book_img, 
+	a {
+    width: 124px!important;
+    height: 200px!important;
+	}
+
+	#case-block-right {
+    bottom: 12%!important;
+	}
+	
+	#button1, 
+	#button2 {
+    display: none!important;
+	}
+
+	#author2 {
+    margin-top: 15px!important;
+	}
+}
+
+.swipe-wrap>div {
+  text-align: center;
+}
+
+@font-face {
+  font-family: "Arno Pro Italic";
+  src: url(../fonts/arnopro-italic-webfont.eot);
+  src: url(../fonts/arnopro-italic-webfont.eot?#iefix) format('embedded-opentype'), 
+  		 url(../fonts/ArnoPro-Italic.otf), 
+  		 url(../fonts/arnopro-italic-webfont.woff) format('woff'), 
+  		 url(arnopro-italic-webfont.svg#arno_proitalic) format('svg');
+}
+
+@font-face {
+  font-family: "Arno Pro";
+  src: url(../fonts/arno_pro-webfont.eot);
+  src: url(arno_pro-webfont.eot?#iefix) format('embedded-opentype'), 
+  		 url('../fonts/Arno Pro.ttf'), 
+  		 url(../fonts/arno_pro-webfont.woff) format('woff'), 
+  		 url(../fonts/arno_pro-webfont.svg#arno_proregular) format('svg');
+}
+
+.header {
+  position: relative;
+  display: block;
+  width: 326px;
+  height: 132px;
+  margin: 0 auto;
+}
+
+.stroke {
+  position: absolute;
+  background: #c70000 repeat-x;
+  height: 12px;
+  width: 100%
+}
+
+#quote {
+  text-align: center;
+  font: 2em "Arno Pro";
+  color: #5b5b5b;
+  max-width: 520px;
+  margin: 140px auto 0;
+}
+
+.bullet, 
+.bullet1 {
+  height: 10px;
+  width: 10px;
+  margin: 30px auto 0;
+  border-radius: 50%;
+  background: #c70000;
+}
+
+#author, 
+#author2 {
+  display: inline-block;
+  text-align: center;
+  margin-top: 33px;
+  color: #5b5b5b;
+  font: 1.75em "Arno Pro";
+  letter-spacing: 5px;
+}
+
+#year {
+  letter-spacing: normal;
+  margin-top: 11.5px;
+  font-size: 1.6em;
+}
+
+.description {
+  font: 1.7em "Arno Pro Italic";
+  color: #5b5b5b;
+  text-align: center;
+  max-width: 700px;
+  margin: 33px auto 0;
+}
+
+#case-block-right {
+  display: block;
+  position: absolute;
+  margin-right: -136px;
+  bottom: 10%;
+  right: 0;
+}
+
+#button1, 
+#button2 {
+  width: 136px;
+  height: 100px;
+  position: absolute;
+  top: 75%
+}
+
+#button1 {
+  right: 0;
+  z-index: 5;
+}
+
+#button2 {
+  left: 0;
+}
+
+a {
+  display: block;
+  position: relative;
+  margin: 30px auto 0;
+  width: 175px;
+  height: 270px;
+  font-size: .75em;
+  color: #fff;
+}
+
+#book_img {
+  width: 175px;
+  height: 270px;
+}
+
+#big-circle {
+  margin-top: -30px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  padding-top: 10px;
+  height: 40px;
+  border: 1px solid #000;
+  -khtml-border-radius: 50%;
+  border-radius: 50%;
+  background: #c70000;
+  background: -webkit-linear-gradient(top, #c70000, #9c0000);
+  background: -webkit-gradient(linear, left top, left bottom, from(#c70000), to(#9c0000));
+  background: linear-gradient(top, #c70000, #9c0000);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr="#c70000",  endColorstr='#000000');
+}
+
+#sl1 {
+  min-height: 553px;
+}
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+}
+
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+}
+
+.swipe-wrap>div {
+  float: left;
+  width: 100%;
+  position: relative;
+}

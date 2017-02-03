@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Фраза дня - это сайт, на котором, вы каждый день сможете читать фразы ваших любимых аторов, а так же получать ссылки на произведения.">
+<meta name="keywords" content="фраза дня, скачать книгу">
+<meta name="viewport" content="width=device-width,maximum-scale=1, user-scalable=no">
+<link rel="icon" type="image/png" href="pictures/favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-favicon-precomposed.png">
+<title>Фраза дня</title>
+<link rel="stylesheet" href="css/quote.css">
+</head>
+<body>
+<div class="stroke">
+</div>
+	<div id="slider" class="swipe">
+		<div class="swipe-wrap">
+			<div id="sl1">
+				<!--красная линия-->
+				<img src="pictures/head.png" alt="Фраза дня" class="header">
+				<p id="quote">Человек, которому некуда девать собственное время, всегда без малейшего зазрения совести посягает на чужое.</p>
+				<div class="bullet"></div>
+				<span id="author">Джейн Остин</span>
+				<img src="pictures/arrows.png" id="case-block-right" alt="Узнай еще о фразе дня">
+				<div id="button1" onclick="mySwipe.next()"></div>
+			</div>
+			<div id="sl2">
+				<span id="author2">Джейн Остин</span>
+				<span id="year"></span>
+				<div class="bullet1"></div>
+				<p class="description" id="description">Английская писательница, провозвестница реализма в британской литературе, сатирик, писала так называемые романы нравов.</p>	
+				<a id="url" href="http://www.litres.ru/onore-balzak/shagrenevaya-kozha/">
+					<img src="" id="book_img" alt="Обложка книги">
+					<p id="big-circle">Скачать книгу</p>
+				</a>
+				<div id="button2" onclick="mySwipe.prev()"></div>
+			</div>
+		</div>
+	</div>
+<script src="js/quote.js"></script>
+<script src="js/swipe.js"></script>
+<script>
+window.mySwipe = Swipe(document.getElementById('slider'));
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44657852-1', 'fraza-dnya.ru');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>
