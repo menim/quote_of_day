@@ -129,6 +129,21 @@ body {
   height: 100%;
 }
 
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+}
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.swipe-wrap > div {
+  float:left;
+  width:100%;
+  position: relative;
+}
+
 @media only screen and (max-width: 767px) {
 	.logo {
     width: 196px;
@@ -150,8 +165,8 @@ body {
 	#description {
     font-size: 1.25em;
     max-width: 460px;
-		margin-right: 5px;
-		margin-left: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
 	}
 	
 	.book-image {

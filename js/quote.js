@@ -1,5 +1,8 @@
 				/* Initialize swipe*/
 var mySwipe = Swipe(document.getElementById('slider'), {continuous: false});
+document.getElementById('description-btn').onclick = mySwipe.prev;
+document.getElementById('quote-btn').onclick = mySwipe.next;
+
 
 function hanging(a) {
   for (var b = a.length, c = 0; b - 1 > c; c++){
