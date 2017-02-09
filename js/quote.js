@@ -1,3 +1,6 @@
+				/* Initialize swipe*/
+var mySwipe = Swipe(document.getElementById('slider'), {continuous: false});
+
 function hanging(a) {
   for (var b = a.length, c = 0; b - 1 > c; c++){
     for (var d = a[c].split(" "), e = d.length, f = 0; e - 1 > f; f++) {
@@ -714,8 +717,8 @@ var now = new Date,
 if (data > 112) {
   var date = now.getDate(),
       quote = document.getElementById("quote"),
-      author = document.getElementById("author"),
-      author2 = document.getElementById("author2"),
+      author = document.getElementsByClassName("author")[0],
+      author2 = document.getElementsByClassName("author")[1],
       year = document.getElementById("year"),
       description = document.getElementById("description"),
       url = document.getElementById("url"),
@@ -731,8 +734,8 @@ if (data > 112) {
 } 
 else {
   var quote = document.getElementById("quote"),
-  		author = document.getElementById("author"),
-  		author2 = document.getElementById("author2"),
+      author = document.getElementsByClassName("author")[0],
+      author2 = document.getElementsByClassName("author")[1],
   		year = document.getElementById("year"),
   		description = document.getElementById("description"),
   		url = document.getElementById("url"),
