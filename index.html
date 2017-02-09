@@ -11,29 +11,30 @@
 <link rel="stylesheet" href="css/quote.css">
 </head>
 <body>
-<div class="stroke">
-</div>
 	<div id="slider" class="swipe">
 		<div class="swipe-wrap">
-			<div id="sl1">
+			<div id="sl1" class="slide">
 				<!--красная линия-->
-				<img src="pictures/head.png" alt="Фраза дня" class="header">
+				<div class="stroke">
+				</div>
+				<img class="logo" src="pictures/head.png" alt="Фраза дня" width="326" heigth="132" />
 				<p id="quote">Человек, которому некуда девать собственное время, всегда без малейшего зазрения совести посягает на чужое.</p>
 				<div class="bullet"></div>
-				<span id="author">Джейн Остин</span>
-				<img src="pictures/arrows.png" id="case-block-right" alt="Узнай еще о фразе дня">
-				<div id="button1" onclick="mySwipe.next()"></div>
+				<span class="author">Джейн Остин</span>
+				<div id="quote-btn" onclick="mySwipe.next()"></div>
 			</div>
-			<div id="sl2">
-				<span id="author2">Джейн Остин</span>
-				<span id="year"></span>
-				<div class="bullet1"></div>
-				<p class="description" id="description">Английская писательница, провозвестница реализма в британской литературе, сатирик, писала так называемые романы нравов.</p>	
-				<a id="url" href="http://www.litres.ru/onore-balzak/shagrenevaya-kozha/">
-					<img src="" id="book_img" alt="Обложка книги">
-					<p id="big-circle">Скачать книгу</p>
+			<div id="sl2" class="slide">
+				<div class="stroke">
+				</div>
+				<span class="author">Джейн Остин</span>
+				<span id="year" ></span>
+				<div class="bullet"></div>
+				<p id="description">Английская писательница, провозвестница реализма в британской литературе, сатирик, писала так называемые романы нравов.</p>	
+				<a class="book-link" id="url" href="http://www.litres.ru/onore-balzak/shagrenevaya-kozha/">
+					<img class="book-image" src="" id="book_img" alt="Обложка книги" width="175" height="270" />
+					<span class="big-circle">Скачать книгу</span>
 				</a>
-				<div id="button2" onclick="mySwipe.prev()"></div>
+				<div id="description-btn" onclick="mySwipe.prev()"></div>
 			</div>
 		</div>
 	</div>
