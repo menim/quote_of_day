@@ -4,13 +4,21 @@ document.getElementById('description-btn').onclick = mySwipe.prev;
 document.getElementById('quote-btn').onclick = mySwipe.next;
 
 
-function hanging(a) {
-  for (var b = a.length, c = 0; b - 1 > c; c++){
-    for (var d = a[c].split(" "), e = d.length, f = 0; e - 1 > f; f++) {
-    	d[f] += d[f].length <= 3 ? "&nbsp;" : " ", 
-    	a[c] = d.join("")
-    }
-  }
+/* if word less than 3 letters, move to next line
+	@param { str } a;
+
+	@return str; 
+
+ */
+
+function hangingWords(str) {
+	var arr=str.split(" "),
+		arrLen = arr.length;
+	for(var i=0;i<arrLen;i++){
+		arr[i]+=(arr[i].length<=3) ? "&nbsp;" : " ";
+	}
+
+	return arr.join("");
 }
 
 var arr = [
@@ -708,8 +716,8 @@ var len = arr.length,
   	len1 = arr2.length,
   	len2 = arr3.length,
   	len4 = arr4.length;
-hanging(arr); 
-hanging(arr3);
+//hangingWords(arr); 
+//hangingWords(arr3);
 var now = new Date,
   	start = new Date(now.getFullYear(), 0, 0),
     diff = now - start,
@@ -727,11 +735,11 @@ if (data > 112) {
       url = document.getElementById("url"),
       _src = document.getElementById("book_img");
     	
-    	quote.innerHTML = arr[date];
+    	quote.innerHTML = hangingWords(arr[date]);
     	author.innerHTML = arr2[date];
     	author2.innerHTML = arr2[date];
     	year.innerHTML = arr4[date];
-    	description.innerHTML = arr3[date];
+    	description.innerHTML = hangingWords(arr3[date]);
     	url.href = "http://www.litres.ru/" + arr5[date];
     	_src.src = "pictures/" + arr6[date]
 } 
@@ -744,11 +752,11 @@ else {
   		url = document.getElementById("url"),
   		_src = document.getElementById("book_img");
 
-    	quote.innerHTML = arr[data];
+    	quote.innerHTML = hangingWords(arr[data]);
     	author.innerHTML = arr2[data];
     	author2.innerHTML = arr2[data];
     	year.innerHTML = arr4[data];
-    	description.innerHTML = arr3[data];
+    	description.innerHTML = hangingWords(arr3[data]);
     	url.href = "http://www.litres.ru/" + arr5[data];
     	_src.src = "pictures/" + arr6[data]
 }
