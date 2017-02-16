@@ -36,6 +36,25 @@ var elements = function(){
 					arr[i]+=(arr[i].length<=3) ? "&nbsp;" : " ";
 				}
 				return arr.join("");
+			},
+												/* Get json from the server with xmlhttprequest
+															@param {string} url
+																		 {function} callback	 
+												 */
+			getJSON = function(url, callback){
+				var xhr = new XMLHttpRequest();
+				xhr.open("get", url, true);
+				xhr.responseType = "json";
+				xhr.onload = function(){
+					var status = xhr.status;
+					if(status == 200){
+						callback(xhr.response);
+					}
+					else {
+						callback(status);
+					}
+				};	
+				xhr.send();
 			};
 	return {
 		quote: quote,
@@ -47,27 +66,15 @@ var elements = function(){
 		linkTo: linkTo,
 		spreadUrl: spreadUrl,
 		getDateOfYear: getDateOfYear,
-		hangingWords: hangingWords
+		hangingWords: hangingWords,
+		getJSON: getJSON
 	}
 }();
 
-var getJSON = function(url, callback){
-	var xhr = new XMLHttpRequest();
-	xhr.open("get", url, true);
-	xhr.responseType = "json";
-	xhr.onload = function(){
-		var status = xhr.status;
-		if(status == 200){
-			callback(null, xhr.response);
-		}else {
-		callback(status);
-		}
-};
-xhr.send();
-};
 
-function init(elements, win){
-	if(win.fetch){
+
+function init(elements){
+	if(window.fetch){
 		fetch(elements.spreadUrl, {method: 'get'})
 		.then(function(response){
 			if(response.ok){
@@ -87,9 +94,18 @@ function init(elements, win){
 		.catch(function(error){
 			console.log('There has been a error with fetch:'+error.message);
 		});
-	}else {
-
+	}
+	else {
+		elements.getJSON(elements.spreadUrl, function(data){
+				var spreadsheetData = data.feed.entry;
+				elements.quote.innerHTML = elements.hangingWords(spreadsheetData[elements.getDateOfYear].gsx$qoute.$t);
+				elements.author.innerHTML = elements.author2.innerHTML = spreadsheetData[elements.getDateOfYear].gsx$author.$t;
+				elements.year.innerHTML = spreadsheetData[elements.getDateOfYear].gsx$years.$t;
+				elements.description.innerHTML = elements.hangingWords(spreadsheetData[elements.getDateOfYear].gsx$authordescription.$t);
+				elements.cover.src = 'pictures/' + spreadsheetData[elements.getDateOfYear].gsx$cover.$t;
+				elements.linkTo.href ='http://www.litres.ru/' + spreadsheetData[elements.getDateOfYear].gsx$linktolitress.$t;
+		});
 	}
 }
 
-init(elements, window);
+init(elements);
