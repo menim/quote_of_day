@@ -83,13 +83,16 @@ function init(elements){
 			throw new Error('Network response not work ok');
 		})
 		.then(function(data){
-				var spreadsheetData = data.feed.entry;
-				elements.quote.innerHTML = elements.hangingWords(spreadsheetData[elements.getDateOfYear].gsx$qoute.$t);
-				elements.author.innerHTML = elements.author2.innerHTML = spreadsheetData[elements.getDateOfYear].gsx$author.$t;
-				elements.year.innerHTML = spreadsheetData[elements.getDateOfYear].gsx$years.$t;
-				elements.description.innerHTML = elements.hangingWords(spreadsheetData[elements.getDateOfYear].gsx$authordescription.$t);
-				elements.cover.src = 'pictures/' + spreadsheetData[elements.getDateOfYear].gsx$cover.$t;
-				elements.linkTo.href ='http://www.litres.ru/' + spreadsheetData[elements.getDateOfYear].gsx$linktolitress.$t;
+				var spreadsheetData = data.feed.entry,
+						spreadsheetDataLen = spreadsheetData.length-1,
+						day = (elements.getDateOfYear<=spreadsheetDataLen) ? elements.getDateOfYear : elements.getDateOfYear - spreadsheetDataLen;
+					
+				elements.quote.innerHTML = elements.hangingWords(spreadsheetData[day].gsx$qoute.$t);
+				elements.author.innerHTML = elements.author2.innerHTML = spreadsheetData[day].gsx$author.$t;
+				elements.year.innerHTML = spreadsheetData[day].gsx$years.$t;
+				elements.description.innerHTML = elements.hangingWords(spreadsheetData[day].gsx$authordescription.$t);
+				elements.cover.src = 'pictures/' + spreadsheetData[day].gsx$cover.$t;
+				elements.linkTo.href = spreadsheetData[day].gsx$linktolitress.$t;
 		})
 		.catch(function(error){
 			console.log('There has been a error with fetch:'+error.message);
@@ -97,13 +100,15 @@ function init(elements){
 	}
 	else {
 		elements.getJSON(elements.spreadUrl, function(data){
-				var spreadsheetData = data.feed.entry;
-				elements.quote.innerHTML = elements.hangingWords(spreadsheetData[elements.getDateOfYear].gsx$qoute.$t);
-				elements.author.innerHTML = elements.author2.innerHTML = spreadsheetData[elements.getDateOfYear].gsx$author.$t;
-				elements.year.innerHTML = spreadsheetData[elements.getDateOfYear].gsx$years.$t;
-				elements.description.innerHTML = elements.hangingWords(spreadsheetData[elements.getDateOfYear].gsx$authordescription.$t);
-				elements.cover.src = 'pictures/' + spreadsheetData[elements.getDateOfYear].gsx$cover.$t;
-				elements.linkTo.href ='http://www.litres.ru/' + spreadsheetData[elements.getDateOfYear].gsx$linktolitress.$t;
+				var spreadsheetData = data.feed.entry,
+						spreadsheetDataLen = spreadsheetData.length-1,
+						day = (elements.getDateOfYear<=spreadsheetDataLen) ? elements.getDateOfYear : elements.getDateOfYear - spreadsheetDataLen;
+				elements.quote.innerHTML = elements.hangingWords(spreadsheetData[day].gsx$qoute.$t);
+				elements.author.innerHTML = elements.author2.innerHTML = spreadsheetData[day].gsx$author.$t;
+				elements.year.innerHTML = spreadsheetData[day].gsx$years.$t;
+				elements.description.innerHTML = elements.hangingWords(spreadsheetData[day].gsx$authordescription.$t);
+				elements.cover.src = 'pictures/' + spreadsheetData[day].gsx$cover.$t;
+				elements.linkTo.href = spreadsheetData[day].gsx$linktolitress.$t;
 		});
 	}
 }
