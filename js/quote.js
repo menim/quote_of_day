@@ -42,7 +42,8 @@ var elements = function(){
 																		 {function} callback	 
 												 */
 			getJSON = function(url, callback){
-				var xhr = new XMLHttpRequest();
+				var XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
+				var xhr = new XHR();
 				xhr.open("get", url, true);
 				xhr.responseType = "json";
 				xhr.onload = function(){
