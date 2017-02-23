@@ -75,11 +75,31 @@ var elements = function(){
 
 
 function init(elements){
+
+							/*Get day of year and equals to spreadsheet length 
+								@param {Number} datalen;
+								@return {Number} day;
+							*/
+	function getDay(dataLen){
+		var day = 0;
+		if((elements.getDateOfYear-dataLen)>dataLen){
+				day = elements.getDateOfYear-dataLen*2;
+		}
+		else {
+			day = (elements.getDateOfYear<=dataLen) ? elements.getDateOfYear : elements.getDateOfYear - dataLen;
+		}
+
+		return day;
+	}
+
+			/* Function that set data to dom elements 
+						@param {Object} data;
+ 			*/
+
 	function initData(data){
 		var spreadsheetData = data.feed.entry,
 				spreadsheetDataLen = spreadsheetData.length-1,
-				day = (elements.getDateOfYear<=spreadsheetDataLen) ? elements.getDateOfYear : elements.getDateOfYear - spreadsheetDataLen;
-					
+				day = getDay(spreadsheetDataLen);
 				elements.quote.innerHTML = elements.hangingWords(spreadsheetData[day].gsx$qoute.$t);
 				elements.author.innerHTML = elements.author2.innerHTML = spreadsheetData[day].gsx$author.$t;
 				elements.year.innerHTML = spreadsheetData[day].gsx$years.$t;
