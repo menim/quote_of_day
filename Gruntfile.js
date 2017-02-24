@@ -66,7 +66,8 @@ module.exports=function(grunt){
       target: {
         files: [
           {
-            src:'css/qoute.css',
+            expand: true,
+            src:['css/qoute.css'],
             dest:'dist/quote.css'
           }
         ]
@@ -76,7 +77,7 @@ module.exports=function(grunt){
       options: {
       },
       all: {
-        src: ["css/bootstrap.min.css","css/font-awesome.min.css","css/myown.css"],
+        src: [],
         dest:"dist/myown.css"
       }
     },
