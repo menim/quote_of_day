@@ -53,7 +53,8 @@ body {
   height: 10px;
   width: 10px;
   margin: 30px auto 0;
-  border-radius: 50%;
+  -moz-border-radius: 50%;
+       border-radius: 50%;
   background: #c70000;
 }
 
@@ -80,7 +81,11 @@ body {
   width: 136px;
   height: 48px;
   position: absolute;
-  top: 75%
+  top: 75%;
+  border: none;
+  padding: 0;
+  display: block;
+  cursor: pointer;
 }
 
 #quote-btn {
@@ -109,7 +114,8 @@ body {
   height: 42px;
   letter-spacing: 0.1em;
   border: 1px solid #000;
-  border-radius: 50%;
+  -moz-border-radius: 50%;
+       border-radius: 50%;
   background: #c70000;
 }
 
@@ -190,3 +196,4 @@ body {
 		background-position: 57px 0;
 	}
 }
+/*# sourceMappingURL=quote.css.map */
