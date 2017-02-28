@@ -82,10 +82,11 @@ body {
   height: 48px;
   position: absolute;
   top: 75%;
-  border: none;
+  border: 0;
   padding: 0;
   display: block;
   cursor: pointer;
+  outline: none;
 }
 
 #quote-btn {
@@ -95,6 +96,7 @@ body {
 
 #description-btn {
   background: url('../pictures/arrows.png') no-repeat -136px 0;
+  left: 0;
 }
 
 .book-link {
@@ -128,6 +130,7 @@ body {
 
 .swipe-wrap {
   height: 100%;
+  position: relative;
 }
 
 .slide {
@@ -137,15 +140,6 @@ body {
   height: 100%;
 }
 
-.swipe {
-  overflow: hidden;
-  visibility: hidden;
-  position: relative;
-}
-.swipe-wrap {
-  overflow: hidden;
-  position: relative;
-}
 .swipe-wrap > div {
   float:left;
   width:100%;
@@ -190,6 +184,7 @@ body {
 
 	#description-btn {
 		background-position: -199px 0;
+		left: 0;
 	}
 
 	#quote-btn {
