@@ -41,7 +41,7 @@ var elements = function(){
 															@param {string} url
 																		 {function} callback	 
 												 */
-			getJSON = function(url, callback){
+			/*getJSON = function(url, callback){
 				var XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
 				var xhr = new XHR();
 				xhr.open("get", url, true);
@@ -56,7 +56,29 @@ var elements = function(){
 					}
 				};	
 				xhr.send();
+			};*/
+		getJSON= function(url, successHandler, errorHandler) {
+			var xhr = typeof XMLHttpRequest != 'undefined'
+				? new XMLHttpRequest()
+				: new ActiveXObject('Microsoft.XMLHTTP');
+			xhr.open('get', url, true);
+			xhr.onreadystatechange = function() {
+				var status;
+				var data;
+				// https://xhr.spec.whatwg.org/#dom-xmlhttprequest-readystate
+				if (xhr.readyState == 4) { // `DONE`
+					status = xhr.status;
+					if (status == 200) {
+						data = JSON.parse(xhr.responseText);
+						successHandler && successHandler(data);
+					} else {
+						errorHandler && errorHandler(status);
+					}
+				}
 			};
+			xhr.send();
+		};
+
 	return {
 		quote: quote,
 		author: author,
@@ -83,7 +105,7 @@ function init(elements){
 	function getDay(dataLen){
 		var day = 0;
 		if((elements.getDateOfYear-dataLen)>dataLen){
-				day = elements.getDateOfYear-dataLen*2;
+			day = elements.getDateOfYear-dataLen*2;
 		}
 		else {
 			day = (elements.getDateOfYear<=dataLen) ? elements.getDateOfYear : elements.getDateOfYear - dataLen;
@@ -108,7 +130,7 @@ function init(elements){
 				elements.linkTo.href = spreadsheetData[day].gsx$linktolitress.$t;
 		}
 	
-	if(window.fetch){
+	if(""){
 		fetch(elements.spreadUrl, {method: 'get'})
 		.then(function(response){
 			if(response.ok){
