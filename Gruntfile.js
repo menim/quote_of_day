@@ -7,25 +7,18 @@ module.exports=function(grunt){
       },
       dist: {
         src:['js/quote.js','js/swipe.js'],
-        dest:'dist/myown.js'
+        dest:'dist/js/myown.js'
       }
     },
-    /*uncss: {
-      dist:{
-        files:[
-          { src:'index.html', dest:'dist/myown.css'}
-        ]
-      }
-    },*/
     uglify: {
       my_target: {
         files:{
-          'dist/myown.js':['dist/myown.js']
+          'dist/js/myown.js':['dist/js/myown.js']
         }
       }
     },
     jshint: {
-      files:['dist/myown.js'],
+      files:['dist/js/myown.js'],
       options: {
         globals: {
           jQuery:true,
@@ -64,13 +57,15 @@ module.exports=function(grunt){
     },
     cssmin: {
       target: {
-        files: [
-          {
+         files: [{
+          'dist/css/myown.css':'css/quote.css'
+         },
+         {
             expand: true,
-            src:['css/qoute.css'],
-            dest:'dist/quote.css'
-          }
-        ]
+            src: ['*.css'],
+            dest:'css/quote.css',
+            ext: '.min.css'
+          }]
       }
     },
     concat_css: {
@@ -110,6 +105,21 @@ module.exports=function(grunt){
         files: {
           'dist/myown.css':['index.html']
         }
+      }
+    },
+    'sw-precache': {
+      options: {
+        cacheId: 'quote-of-day',
+        workFileName: 'sw.js',
+        verbose: true,
+      },
+      'default': {
+        staticFileGlobs: [
+          'css/**/*.css',
+          'fonts/**/*.{woff,ttf,svg,eot}',
+          'pictures/**/*.{gif,png,jpg}',
+          'js/**/*.js',
+        ]
       }
     },
     watch: {
@@ -152,7 +162,8 @@ module.exports=function(grunt){
   grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-html');
   grunt.loadNpmTasks('grunt-stylelint');
+  grunt.loadNpmTasks('grunt-sw-precache');
 
   grunt.registerTask('default', ['browserSync', 'watch']);
-  grunt.registerTask('ondev', ['postcss','cssmin','htmlmin','uglify']);
+  grunt.registerTask('ondev', ['postcss','cssmin','htmlmin','concat','uglify']);
 };
