@@ -48,7 +48,14 @@
 
   ga('create', 'UA-44657852-1', 'fraza-dnya.ru');
   ga('send', 'pageview');
-
+  if('serviceWorker' in navigator){
+  	navigator.servoceWorker.register('/service-worker.js')
+  	.then(function(reg) {
+  		console.log('Registration succeeded');
+  	}).catch(function(error) {
+  		console.log('Registration failed  with' + error);
+  	});
+  }
 </script>
 </body>
 </html>
