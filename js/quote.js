@@ -14,7 +14,7 @@ var elements = function(){
    		description = document.getElementById("description"),
     	linkTo = document.getElementById("url"),
     	cover = document.getElementById("book-img"),
-    	spreadUrl ='http://spreadsheets.google.com/feeds/list/17T8jqTsiOdfGXKhAg21cpJAfV6zSHzuMF-nXbk0ltHs/od6/public/values?alt=json',
+    	spreadUrl ='https://spreadsheets.google.com/feeds/list/17T8jqTsiOdfGXKhAg21cpJAfV6zSHzuMF-nXbk0ltHs/od6/public/values?alt=json',
 											/* Get day of the full year 
 													@return {number}
 											*/
