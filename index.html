@@ -5,6 +5,7 @@
 <meta name="description" content="Фраза дня - это сайт, на котором, вы каждый день сможете читать фразы ваших любимых аторов, а так же получать ссылки на произведения.">
 <meta name="keywords" content="фраза дня, скачать книгу">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="manifest" href="/manifest.json">
 <link rel="icon" type="image/png" href="pictures/favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-favicon-precomposed.png">
 <title>Фраза дня</title>
@@ -49,7 +50,7 @@
   ga('create', 'UA-44657852-1', 'fraza-dnya.ru');
   ga('send', 'pageview');
   if('serviceWorker' in navigator){
-  	navigator.servoceWorker.register('/service-worker.js')
+  	navigator.serviceWorker.register('/service-worker.js')
   	.then(function(reg) {
   		console.log('Registration succeeded');
   	}).catch(function(error) {
