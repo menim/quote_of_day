@@ -110,14 +110,14 @@ module.exports=function(grunt){
     'sw-precache': {
       options: {
         cacheId: 'quote-of-day',
-        workFileName: 'sw.js',
+        workFileName: 'service-worker.js',
         verbose: true,
       },
       'default': {
         staticFileGlobs: [
           'css/**/*.css',
           'fonts/**/*.{woff,ttf,svg,eot}',
-          'pictures/**/*.{gif,png,jpg}',
+          'pictures/**/*.{gif,png}',
           'js/**/*.js',
         ]
       }
