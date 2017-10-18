@@ -13,7 +13,8 @@ module.exports=function(grunt){
     uglify: {
       my_target: {
         files:{
-          'dist/js/myown.js':['dist/js/myown.js']
+          'dist/js/myown.js':['dist/js/myown.js'],
+          'dist/service-worker.js':['dist/service-worker.js']
         }
       }
     },
@@ -115,11 +116,12 @@ module.exports=function(grunt){
       },
       'default': {
         staticFileGlobs: [
+          'index.html',
           'css/**/*.css',
           'fonts/**/*.{woff,ttf,svg,eot}',
-          'pictures/**/*.{gif,png}',
+          'pictures/**/*.{gif,png,jpg}',
           'js/**/*.js',
-        ]
+        ],
       }
     },
     watch: {
