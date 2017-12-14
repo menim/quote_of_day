@@ -89,7 +89,7 @@ module.exports=function(grunt){
             "Android >= 4",
             "Chrome >= 20",
             "Firefox >= 3",
-            "Explorer 9",
+            "Explorer >= 9",
             "iOS >= 6",
             "Opera >= 8",
             "Safari >= 6"
