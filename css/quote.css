@@ -6,7 +6,7 @@ html {
 }
 
 body {
-	background: #f2f2f2 url(../pictures/background.png) repeat;
+  background: #f2f2f2 url(../pictures/background.png) repeat; 
   font: 16px Arno Pro, Georgia, serif;
   color: #5b5b5b;
 }
@@ -19,6 +19,7 @@ body {
     	 url(../fonts/arnopro-italic.woff) format('woff'), 
   		 url(../fonts/arnopro-italic.otf), 
   		 url(arnopro-italic.svg#arno_proitalic) format('svg');
+  font-display: swap;
 }
 
 @font-face {
@@ -29,6 +30,7 @@ body {
   		 url(../fonts/arno_pro-webfont.woff) format('woff'),  
   		 url('../fonts/Arno Pro.ttf'),   		 
   		 url(../fonts/arno_pro-webfont.svg#arno_proregular) format('svg');
+  font-display: swap;     
 }
 
 .stroke {
@@ -137,21 +139,25 @@ body {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: start;
   -webkit-justify-content: start;
      -moz-box-pack: start;
-          justify-content: start;
+          -ms-flex-pack: start;
+      justify-content: start;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
      -moz-box-orient: vertical;
      -moz-box-direction: normal;
-          flex-direction: column;
+          -ms-flex-direction: column;
+      flex-direction: column;
   -webkit-box-align: center;
   -webkit-align-items: center;
      -moz-box-align: center;
-          align-items: center;
+          -ms-flex-align: center;
+      align-items: center;
   position: relative;
   text-align: center;
   height: 100%;
