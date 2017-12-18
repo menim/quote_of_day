@@ -6,7 +6,7 @@ html {
 }
 
 body {
-  background: #f2f2f2 url(../pictures/background.png) repeat; 
+  background: #f2f2f2 url(../pictures/background.png) repeat;
   font: 16px Arno Pro, Georgia, serif;
   color: #5b5b5b;
 }
@@ -15,10 +15,10 @@ body {
   font-family: "Arno Pro Italic";
   src: url(../fonts/arnopro-italic.eot);
   src: url(../fonts/arnopro-italic.eot?#iefix) format('embedded-opentype'),
-    	 url(../fonts/arnopro-italic.woff2) format('woff2'),   
-    	 url(../fonts/arnopro-italic.woff) format('woff'), 
-  		 url(../fonts/arnopro-italic.otf), 
-  		 url(arnopro-italic.svg#arno_proitalic) format('svg');
+       url(../fonts/arnopro-italic.woff2) format('woff2'),   
+       url(../fonts/arnopro-italic.woff) format('woff'), 
+       url(../fonts/arnopro-italic.otf), 
+       url(arnopro-italic.svg#arno_proitalic) format('svg');
   font-display: swap;
 }
 
@@ -26,10 +26,10 @@ body {
   font-family: "Arno Pro";
   src: url(../fonts/arno_pro-webfont.eot);
   src: url(arno_pro-webfont.eot?#iefix) format('embedded-opentype'),
-    	 url(../fonts/arno-pro.woff2) format('woff2'),
-  		 url(../fonts/arno_pro-webfont.woff) format('woff'),  
-  		 url('../fonts/Arno Pro.ttf'),   		 
-  		 url(../fonts/arno_pro-webfont.svg#arno_proregular) format('svg');
+       url(../fonts/arno-pro.woff2) format('woff2'),
+       url(../fonts/arno_pro-webfont.woff) format('woff'),  
+       url(../fonts/Arno Pro.ttf),       
+       url(../fonts/arno_pro-webfont.svg#arno_proregular) format('svg');
   font-display: swap;     
 }
 
@@ -41,8 +41,8 @@ body {
 }
 
 .logo {
-	position: relative;
-	z-index: 1;
+  position: relative;
+  z-index: 1;
 }
 
 #quote {
@@ -78,7 +78,7 @@ body {
   margin: 33px auto 0;
 }
 
-#description-btn, 
+#description-btn,
 #quote-btn {
   width: 136px;
   height: 48px;
@@ -92,11 +92,11 @@ body {
 
 #quote-btn {
   right: 0;
-  background: url('../pictures/arrows.png') no-repeat 0 0;
+  background: url(../pictures/arrows.png) no-repeat 0 0;
 }
 
 #description-btn {
-  background: url('../pictures/arrows.png') no-repeat -136px 0;
+  background: url(../pictures/arrows.png) no-repeat -136px 0;
   left: 0;
 }
 
@@ -170,48 +170,48 @@ body {
 }
 
 @media only screen and (max-width: 767px) {
-	.logo {
+  .logo {
     width: 196px;
     height: 79px;
-	}
-	
-	#quote {
+  }
+  
+  #quote {
     font-size: 1.5em;
     margin-top: 10px;
     padding-left: 5px;
     padding-right: 5px;
-	}
-	
-	#year {
+  }
+  
+  #year {
     font-size: 1.5em;
     display: block;
-	}
+  }
 
-	#description {
+  #description {
     font-size: 1.25em;
     max-width: 460px;
     padding-left: 5px;
     padding-right: 5px;
-	}
-	
-	.book-image {
+  }
+  
+  .book-image {
     width: 124px;
     height: 200px;
-	}
+  }
 
-	#description-btn,
-	#quote-btn {
-		bottom: 0;
-		top: auto;
-	}
+  #description-btn,
+  #quote-btn {
+    bottom: 0;
+    top: auto;
+  }
 
-	#description-btn {
-		background-position: -199px 0;
-		left: 0;
-	}
+  #description-btn {
+    background-position: -199px 0;
+    left: 0;
+  }
 
-	#quote-btn {
-		background-position: 57px 0;
-	}
+  #quote-btn {
+    background-position: 57px 0;
+  }
 }
 /*# sourceMappingURL=quote.css.map */

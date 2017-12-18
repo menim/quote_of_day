@@ -13,33 +13,33 @@
 <link rel="stylesheet" href="css/quote.css">
 </head>
 <body>
-	<div id="slider" class="swipe">
-		<div class="swipe-wrap">
-			<div id="sl1" class="slide">
-				<!--красная линия-->
-				<div class="stroke">
-				</div>
-				<img class="logo" src="pictures/head.png" alt="Фраза дня" width="326" height="132" />
-				<p id="quote"><!--Человек, которому некуда девать собственное время, всегда без малейшего зазрения совести посягает на чужое.--></p>
-				<div class="bullet"></div>
-				<span class="author"><!--Джейн Остин--></span>
-				<button id="quote-btn" aria-label="Перейти к описанию автора"></button>
-			</div>
-			<div id="sl2" class="slide">
-				<div class="stroke">
-				</div>
-				<span class="author">Джейн Остин</span>
-				<span id="year" ></span>
-				<div class="bullet"></div>
-				<p id="description">Английская писательница, провозвестница реализма в британской литературе, сатирик, писала так называемые романы нравов.</p>	
-				<a class="book-link" id="url" href="http://www.litres.ru/onore-balzak/shagrenevaya-kozha/">
-					<img class="book-image" src="" id="book-img" alt="Обложка книги" width="175" height="270" />
-					<span class="big-circle">Скачать книгу</span>
-				</a>
-				<button id="description-btn" aria-label="Перейти к фразе дня"></button>
-			</div>
-		</div>
-	</div>
+  <div id="slider" class="swipe">
+    <div class="swipe-wrap">
+      <div id="sl1" class="slide">
+      <!--красная линия-->
+        <div class="stroke">
+        </div>
+        <img class="logo" src="pictures/head.png" alt="Фраза дня" width="326" height="132" />
+        <p id="quote"><!--Человек, которому некуда девать собственное время, всегда без малейшего зазрения совести посягает на чужое.--></p>
+        <div class="bullet"></div>
+        <span class="author"><!--Джейн Остин--></span>
+        <button id="quote-btn" aria-label="Перейти к описанию автора"></button>
+      </div>
+      <div id="sl2" class="slide">
+        <div class="stroke">
+        </div>
+        <span class="author">Джейн Остин</span>
+        <span id="year" ></span>
+        <div class="bullet"></div>
+        <p id="description">Английская писательница, провозвестница реализма в британской литературе, сатирик, писала так называемые романы нравов.</p> 
+        <a class="book-link" id="url" href="http://www.litres.ru/onore-balzak/shagrenevaya-kozha/">
+          <img class="book-image" src="" id="book-img" alt="Обложка книги" width="175" height="270" />
+          <span class="big-circle">Скачать книгу</span>
+        </a>
+        <button id="description-btn" aria-label="Перейти к фразе дня"></button>
+      </div>
+    </div>
+  </div>
 <script src="js/swipe.js"></script>
 <script src="js/quote.js"></script>
 <script>
@@ -51,13 +51,16 @@
   ga('create', 'UA-44657852-1', 'fraza-dnya.ru');
   ga('send', 'pageview');
   if('serviceWorker' in navigator){
-  	navigator.serviceWorker.register('/service-worker.js')
-  	.then(function(reg) {
-  		console.log('Registration succeeded');
-  	}).catch(function(error) {
-  		console.log('Registration failed  with' + error);
-  	});
+    navigator.serviceWorker.register('/service-worker.js')
+    .then(function(reg) {
+        console.log('Registration succeeded');
+    }).catch(function(error) {
+        console.log('Registration failed  with' + error);
+    });
   }
 </script>
+<script id="__bs_script__">//<![CDATA[
+    document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.18.13'><\/script>".replace("HOST", location.hostname));
+//]]></script>
 </body>
 </html>
