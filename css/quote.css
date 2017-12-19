@@ -13,23 +13,23 @@ body {
 
 @font-face {
   font-family: "Arno Pro Italic";
-  src: url(../fonts/arnopro-italic.eot);
-  src: url(../fonts/arnopro-italic.eot?#iefix) format('embedded-opentype'),
-       url(../fonts/arnopro-italic.woff2) format('woff2'),   
-       url(../fonts/arnopro-italic.woff) format('woff'), 
-       url(../fonts/arnopro-italic.otf), 
-       url(arnopro-italic.svg#arno_proitalic) format('svg');
+  src: url('../fonts/arnopro-italic.eot');
+  src: url('../fonts/arnopro-italic.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/arnopro-italic.woff2') format('woff2'),   
+       url('../fonts/arnopro-italic.woff') format('woff'), 
+       url('../fonts/arnopro-italic.otf'), 
+       url('arnopro-italic.svg#arno_proitalic') format('svg');
   font-display: swap;
 }
 
 @font-face {
   font-family: "Arno Pro";
-  src: url(../fonts/arno_pro-webfont.eot);
-  src: url(arno_pro-webfont.eot?#iefix) format('embedded-opentype'),
-       url(../fonts/arno-pro.woff2) format('woff2'),
-       url(../fonts/arno_pro-webfont.woff) format('woff'),  
-       url(../fonts/Arno Pro.ttf),       
-       url(../fonts/arno_pro-webfont.svg#arno_proregular) format('svg');
+  src: url('../fonts/arno_pro-webfont.eot');
+  src: url('arno_pro-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/arno-pro.woff2') format('woff2'),
+       url('../fonts/arno-pro.woff') format('woff'),  
+       url('../fonts/Arno Pro.ttf'),       
+       url('../fonts/arno_pro-webfont.svg#arno_proregular') format('svg');
   font-display: swap;     
 }
 
