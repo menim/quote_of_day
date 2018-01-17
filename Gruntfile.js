@@ -137,7 +137,7 @@ module.exports=function(grunt){
         },
         options: {
           watchTask: true,
-          server: './../fraza-dnya.ru'
+          server: './'
         }
       }
     },
@@ -148,6 +148,15 @@ module.exports=function(grunt){
           format: 'css'
         },
         src:'css/myown.css'
+      }
+    },
+    critical: {
+      dist: {
+        options: {
+          base: './'
+        },
+        src: 'index.html',
+        dest: 'index.html'
       }
     }
   });   
@@ -165,6 +174,7 @@ module.exports=function(grunt){
   grunt.loadNpmTasks('grunt-html');
   grunt.loadNpmTasks('grunt-stylelint');
   grunt.loadNpmTasks('grunt-sw-precache');
+  grunt.loadNpmTasks('grunt-critical');
 
   grunt.registerTask('default', ['browserSync', 'watch']);
   grunt.registerTask('ondev', ['postcss','cssmin','htmlmin','concat','uglify']);
