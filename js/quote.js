@@ -1,7 +1,15 @@
 /* Initialize swipe */
 var mySwipe = new Swipe(document.getElementById('slider'), {continuous: false});
-document.getElementById('description-btn').onclick = mySwipe.prev;
-document.getElementById('quote-btn').onclick = mySwipe.next;
+var descriptBtn = document.getElementById('description-btn');
+var quoteBtn = document.getElementById('quote-btn');
+
+descriptBtn.addEventListener('click', function() {
+   mySwipe.prev();
+});
+
+quoteBtn.addEventListener('click', function() {
+  mySwipe.next();
+});
 
 var elements = (function() {
   var quote = document.getElementById('quote');
